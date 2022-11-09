@@ -11,6 +11,11 @@
     <!-- #my css-->
     <link rel="stylesheet" href="style.css" />
     <!-- #end css -->
+
+    <!-- #Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js" integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg=" crossorigin=""></script>
+    <!-- #endLeaflet -->
   </head>
   <body id="home">
     <!-- #Navbar-->
@@ -27,6 +32,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#about">SK Kumuh</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects1">PETA</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#projects">Profil Kelurahan</a>
@@ -87,6 +95,36 @@
     </section>
 
     <!-- end About -->
+
+    <!-- #region -->
+    <section id="projects1">
+      <div class="container">
+        <div class="row text-center mb-3">
+          <div class="col">
+            <h2>Peta Sebaran Kegiatan PLBK 2017</h2>
+            <h3>Kelurahan Lompoe</h3>
+          </div>
+        </div>
+        <div id="map" style="height: 400px"></div>
+        <script>
+          var map = L.map("map").setView([-4.0277824696246105, 119.63325724846908], 15);
+          L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+          }).addTo(map);
+          var marker = L.marker([-4.00069, 119.66074]).addTo(map);
+          marker.bindPopup("<b>Jalan Beton</b><br>KSM KAMPUNG JATI").openPopup();
+          var marker = L.marker([-3.99876, 119.66136]).addTo(map);
+          marker.bindPopup("<b>Jalan Beton</b><br>PERINTIS").openPopup();
+          var marker = L.marker([-3.99891, 119.66085]).addTo(map);
+          marker.bindPopup("<b>Jalan Beton</b><br>KSM JATI MULYA").openPopup();
+          var marker = L.marker([-4.00095, 119.66134]).addTo(map);
+          marker.bindPopup("<b>Drainase</b><br>KSM KAMPUNG JATI").openPopup();
+        </script>
+      </div>
+    </section>
+
+    <!-- #endregion -->
 
     <!-- Project-->
     <section id="projects">
